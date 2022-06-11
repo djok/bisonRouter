@@ -13,10 +13,12 @@ import (
 func main() {
 	handler := func(w radius.ResponseWriter, r *radius.Request) {
 		username := rfc2865.UserName_GetString(r.Packet)
-		password := rfc2865.UserPassword_GetString(r.Packet)
+		// password := rfc2865.UserPassword_GetString(r.Packet)
 		remoteId := rfc4679.ADSLAgentRemoteID_GetString(r.Packet)
 		circuitId := rfc4679.ADSLAgentCircuitID_GetString(r.Packet)
-		log.Printf("User-name:[%v], Password:[%v], Remote-Id:[%v], Circuit-Id:[%v]", username, password, remoteId, circuitId)
+		// nasId := cisco.CiscoNASPort_GetString
+		nasId := rfc2865.NASIdentifier_GetString(r.Packet)
+		log.Printf("User-name:[%v], NAS-Identifier:[%v], Remote-Id:[%v], Circuit-Id:[%v]", username, nasId, remoteId, circuitId)
 		var code radius.Code
 		// if username == "tim" && password == "12345" {
 		code = radius.CodeAccessAccept
