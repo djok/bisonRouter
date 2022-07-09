@@ -48,17 +48,17 @@ func printOutput(outs []byte) {
 }
 
 func parseOutput(outs []byte, ping *Ping) {
-	var average = regexp.MustCompile(`Average = (\d+ms)`)
-	result := average.FindStringSubmatch(string(outs))
+	// var average = regexp.MustCompile(`Average = (\d+ms)`)
+	// result := average.FindStringSubmatch(string(outs))
+
+	// if len(result) > 0 {
+	// 	ping.average, _ = time.ParseDuration(result[1])
+	// }
+	// Linux version
+	var average = regexp.MustCompile(`min\/avg\/max\/mdev = (0\.\d+)\/(0\.\d+)\/(0\.\d+)\/(0\.\d+) ms`)
+	result := average.FindAllStringSubmatch(string(outs), -1)
 
 	if len(result) > 0 {
-		ping.average, _ = time.ParseDuration(result[1])
+		ping.average, _ = time.ParseDuration(result[0][2] + "ms")
 	}
-	// Linux version
-	/*var average = regexp.MustCompile(`min\/avg\/max\/mdev = (0\.\d+)\/(0\.\d+)\/(0\.\d+)\/(0\.\d+) ms`)
-	  result := average.FindAllStringSubmatch(string(outs), -1)
-
-	  if len(result) > 0 {
-	          ping.average, _ = time.ParseDuration(result[0][2] + "ms")
-	  }*/
 }
