@@ -15,9 +15,9 @@ type Ping struct {
 }
 
 func main() {
-	cmd := exec.Command("ping", "8.8.8.8")
+	// cmd := exec.Command("ping", "8.8.8.8")
 	// Linux version
-	//cmd := exec.Command("ping", "-c 4", "8.8.8.8")
+	cmd := exec.Command("ping", "-c 4", "8.8.8.8")
 	cmdOutput := &bytes.Buffer{}
 	cmd.Stdout = cmdOutput
 	printCommand(cmd)
