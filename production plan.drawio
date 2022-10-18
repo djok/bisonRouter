@@ -1,22 +1,22 @@
 <mxfile host="65bd71144e">
     <diagram id="KcHhHfBCZ-KF95Xakk1o" name="Page-1">
-        <mxGraphModel dx="944" dy="631" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
+        <mxGraphModel dx="1887" dy="1262" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#FFFFFF" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="5" value="" style="sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=workgroup_switch;fillColor=#FAFAFA;strokeColor=#6696AB;" vertex="1" parent="1">
-                    <mxGeometry x="940" y="560" width="50" height="50" as="geometry"/>
+                    <mxGeometry x="950" y="930" width="130" height="130" as="geometry"/>
                 </mxCell>
                 <mxCell id="28" value="Linux" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_on_premise;strokeColor=#5A6C86;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#5A6C86;dashed=0;labelBackgroundColor=none;fontFamily=Tahoma;" vertex="1" parent="1">
                     <mxGeometry x="320" y="290" width="420" height="620" as="geometry"/>
                 </mxCell>
-                <mxCell id="12" value="BR-Master&lt;br&gt;DPDK" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.groupCenter;grIcon=mxgraph.aws4.group_auto_scaling_group;grStroke=1;strokeColor=#D86613;fillColor=none;verticalAlign=top;align=center;fontColor=#D86613;dashed=1;spacingTop=25;" vertex="1" parent="28">
+                <mxCell id="12" value="&lt;font color=&quot;#006600&quot;&gt;BR-Master&lt;br&gt;DPDK&lt;/font&gt;" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.groupCenter;grIcon=mxgraph.aws4.group_auto_scaling_group;grStroke=1;strokeColor=#006600;fillColor=none;verticalAlign=top;align=center;fontColor=#D86613;dashed=1;spacingTop=25;" vertex="1" parent="28">
                     <mxGeometry x="10" y="300" width="400" height="310" as="geometry"/>
                 </mxCell>
-                <mxCell id="15" value="&lt;font face=&quot;Tahoma&quot; style=&quot;font-size: 10px&quot;&gt;PORT0&lt;br&gt;10G&lt;/font&gt;" style="sketch=0;outlineConnect=0;fontColor=#000000;fillColor=#fa6800;strokeColor=#C73500;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.elastic_network_adapter;flipH=1;" vertex="1" parent="12">
+                <mxCell id="15" value="&lt;font face=&quot;Tahoma&quot; style=&quot;font-size: 10px&quot;&gt;PORT0&lt;br&gt;10G&lt;/font&gt;" style="sketch=0;outlineConnect=0;fontColor=#ffffff;fillColor=#008a00;strokeColor=#005700;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.elastic_network_adapter;flipH=1;" vertex="1" parent="12">
                     <mxGeometry x="-10" y="120" width="40" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="16" value="&lt;font face=&quot;Tahoma&quot; style=&quot;font-size: 10px&quot;&gt;PORT1&lt;br&gt;10G&lt;/font&gt;" style="sketch=0;outlineConnect=0;fontColor=#000000;fillColor=#fa6800;strokeColor=#C73500;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.elastic_network_adapter;flipH=0;" vertex="1" parent="12">
+                <mxCell id="16" value="&lt;font face=&quot;Tahoma&quot; style=&quot;font-size: 10px&quot;&gt;PORT1&lt;br&gt;10G&lt;/font&gt;" style="sketch=0;outlineConnect=0;fontColor=#ffffff;fillColor=#008a00;strokeColor=#005700;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.elastic_network_adapter;flipH=0;" vertex="1" parent="12">
                     <mxGeometry x="370" y="120" width="40" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="22" value="&lt;font color=&quot;#000000&quot; style=&quot;font-size: 10px&quot;&gt;Downlink&lt;br&gt;VL 300-310&lt;/font&gt;" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/networking/Virtual_Networks_Classic.svg;labelBackgroundColor=none;fontFamily=Tahoma;fillColor=#B3B3B3;" vertex="1" parent="12">
@@ -29,12 +29,12 @@
                     <mxGeometry x="290" y="40" width="33.5" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="26" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 10px&quot;&gt;uplink2mng&lt;br&gt;VL 128&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 10px&quot;&gt;10.10.128.31/24&lt;/span&gt;&lt;br&gt;&lt;/font&gt;" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/networking/Virtual_Networks_Classic.svg;labelBackgroundColor=none;fontFamily=Tahoma;fillColor=#B3B3B3;" vertex="1" parent="12">
-                    <mxGeometry x="280" y="240" width="33.5" height="20" as="geometry"/>
+                    <mxGeometry x="290" y="240" width="33.5" height="20" as="geometry"/>
                 </mxCell>
                 <mxCell id="49" value="" style="sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=router_with_firewall2;fillColor=#FAFAFA;strokeColor=#005073;labelBackgroundColor=none;fontFamily=Tahoma;fontSize=10;fontColor=#000000;" vertex="1" parent="12">
                     <mxGeometry x="168" y="115" width="64" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="29" value="&lt;font face=&quot;Tahoma&quot; style=&quot;font-size: 10px&quot;&gt;eth0&lt;br&gt;1G&lt;/font&gt;" style="sketch=0;outlineConnect=0;fontColor=#000000;fillColor=#fa6800;strokeColor=#C73500;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.elastic_network_adapter;flipH=0;" vertex="1" parent="28">
+                <mxCell id="29" value="&lt;font face=&quot;Tahoma&quot; style=&quot;font-size: 10px&quot;&gt;eth0&lt;br&gt;1G&lt;/font&gt;" style="sketch=0;outlineConnect=0;fontColor=#ffffff;fillColor=#008a00;strokeColor=#005700;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.elastic_network_adapter;flipH=0;" vertex="1" parent="28">
                     <mxGeometry x="380" y="130" width="40" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="30" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 10px&quot;&gt;downlink2portal&lt;br&gt;VL 311&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 10px&quot;&gt;10.3.11.1/24&lt;/span&gt;&lt;br&gt;&lt;/font&gt;" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/networking/Virtual_Networks_Classic.svg;labelBackgroundColor=none;fontFamily=Tahoma;fillColor=#B3B3B3;" vertex="1" parent="28">
@@ -47,16 +47,18 @@
                     <mxGeometry x="190.5" y="133.5" width="39" height="33" as="geometry"/>
                 </mxCell>
                 <mxCell id="36" value="BGP&lt;br&gt;VL 1&lt;br&gt;185.163.244.1/28" style="sketch=0;points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.145,0.145,0],[0.8555,0.145,0],[0.855,0.8555,0],[0.145,0.855,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=router;fillColor=#FAFAFA;strokeColor=#005073;labelBackgroundColor=none;fontFamily=Tahoma;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
-                    <mxGeometry x="1171" y="430" width="50" height="50" as="geometry"/>
+                    <mxGeometry x="1231" y="800" width="50" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="41" value="DHCP &amp;amp; RADUIS&amp;nbsp;&lt;br&gt;&amp;amp; CAPTIVE PORTAL&lt;br&gt;VL 128&lt;br&gt;10.10.128.10" style="sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=nac_appliance;fillColor=#FAFAFA;strokeColor=#005073;labelBackgroundColor=#FFFFFF;fontFamily=Tahoma;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
-                    <mxGeometry x="1157" y="560" width="64" height="50" as="geometry"/>
+                    <mxGeometry x="1217" y="930" width="64" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="46" style="edgeStyle=none;html=1;fontFamily=Tahoma;fontSize=10;fontColor=#000000;startArrow=classic;startFill=1;strokeColor=#006600;strokeWidth=2;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.98;exitY=0.51;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="50" target="36">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="940" y="600" as="targetPoint"/>
                         <Array as="points">
+                            <mxPoint x="330" y="730"/>
                             <mxPoint x="720" y="730"/>
+                            <mxPoint x="1010" y="960"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
@@ -66,7 +68,7 @@
                         <Array as="points">
                             <mxPoint x="630" y="840"/>
                             <mxPoint x="720" y="740"/>
-                            <mxPoint x="960" y="598"/>
+                            <mxPoint x="1000" y="968"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
@@ -76,22 +78,102 @@
                         <Array as="points">
                             <mxPoint x="650" y="380"/>
                             <mxPoint x="720" y="430"/>
-                            <mxPoint x="960" y="573"/>
+                            <mxPoint x="1020" y="943"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="50" value="" style="points=[[0.35,0,0],[0.98,0.51,0],[1,0.71,0],[0.67,1,0],[0,0.795,0],[0,0.65,0]];verticalLabelPosition=bottom;sketch=0;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.user;fillColor=#005073;strokeColor=none;labelBackgroundColor=none;fontFamily=Tahoma;fontSize=10;fontColor=#000000;" vertex="1" parent="1">
-                    <mxGeometry x="110" y="710" width="50" height="50" as="geometry"/>
+                    <mxGeometry x="60" y="940" width="50" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="45" style="edgeStyle=none;html=1;fontFamily=Tahoma;fontSize=10;fontColor=#000000;startArrow=classic;startFill=1;strokeColor=#6F0000;strokeWidth=2;fillColor=#a20025;exitX=1.014;exitY=0.366;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="50" target="32">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
+                            <mxPoint x="330" y="720"/>
                             <mxPoint x="550" y="720"/>
                             <mxPoint x="640" y="640"/>
                             <mxPoint x="720" y="720"/>
-                            <mxPoint x="950" y="580"/>
+                            <mxPoint x="1010" y="950"/>
                             <mxPoint x="720" y="440"/>
                             <mxPoint x="650" y="500"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="52" value="Linux" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_on_premise;strokeColor=#5A6C86;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#5A6C86;dashed=0;labelBackgroundColor=none;fontFamily=Tahoma;" vertex="1" parent="1">
+                    <mxGeometry x="320" y="1000" width="420" height="620" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="BR-Slave&lt;br&gt;DPDK" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.groupCenter;grIcon=mxgraph.aws4.group_auto_scaling_group;grStroke=1;strokeColor=#D86613;fillColor=none;verticalAlign=top;align=center;fontColor=#D86613;dashed=1;spacingTop=25;" vertex="1" parent="52">
+                    <mxGeometry x="10" y="300" width="400" height="310" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="&lt;font face=&quot;Tahoma&quot; style=&quot;font-size: 10px&quot;&gt;PORT0&lt;br&gt;10G&lt;/font&gt;" style="sketch=0;outlineConnect=0;fontColor=#000000;fillColor=#fa6800;strokeColor=#C73500;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.elastic_network_adapter;flipH=1;" vertex="1" parent="53">
+                    <mxGeometry x="-10" y="120" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="&lt;font face=&quot;Tahoma&quot; style=&quot;font-size: 10px&quot;&gt;PORT1&lt;br&gt;10G&lt;/font&gt;" style="sketch=0;outlineConnect=0;fontColor=#000000;fillColor=#fa6800;strokeColor=#C73500;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.elastic_network_adapter;flipH=0;" vertex="1" parent="53">
+                    <mxGeometry x="370" y="120" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="&lt;font color=&quot;#000000&quot; style=&quot;font-size: 10px&quot;&gt;Downlink&lt;br&gt;VL 300-310&lt;/font&gt;" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/networking/Virtual_Networks_Classic.svg;labelBackgroundColor=none;fontFamily=Tahoma;fillColor=#B3B3B3;" vertex="1" parent="53">
+                    <mxGeometry x="60" y="130" width="33.5" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 10px&quot;&gt;uplink&lt;br&gt;VL 1&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 10px&quot;&gt;185.163.244.8/28&lt;/span&gt;&lt;br&gt;&lt;/font&gt;" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/networking/Virtual_Networks_Classic.svg;labelBackgroundColor=none;fontFamily=Tahoma;fillColor=#B3B3B3;" vertex="1" parent="53">
+                    <mxGeometry x="290" y="130" width="33.5" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 10px&quot;&gt;uplink2portal&lt;br&gt;VL 312&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 10px&quot;&gt;10.3.12.2/24&lt;/span&gt;&lt;br&gt;&lt;/font&gt;" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/networking/Virtual_Networks_Classic.svg;labelBackgroundColor=none;fontFamily=Tahoma;fillColor=#B3B3B3;" vertex="1" parent="53">
+                    <mxGeometry x="290" y="40" width="33.5" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 10px&quot;&gt;uplink2mng&lt;br&gt;VL 128&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 10px&quot;&gt;10.10.128.41/24&lt;/span&gt;&lt;br&gt;&lt;/font&gt;" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/networking/Virtual_Networks_Classic.svg;labelBackgroundColor=none;fontFamily=Tahoma;fillColor=#B3B3B3;" vertex="1" parent="53">
+                    <mxGeometry x="290" y="240" width="33.5" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="" style="sketch=0;points=[[0.015,0.015,0],[0.985,0.015,0],[0.985,0.985,0],[0.015,0.985,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=router_with_firewall2;fillColor=#FAFAFA;strokeColor=#005073;labelBackgroundColor=none;fontFamily=Tahoma;fontSize=10;fontColor=#000000;" vertex="1" parent="53">
+                    <mxGeometry x="168" y="115" width="64" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="&lt;font face=&quot;Tahoma&quot; style=&quot;font-size: 10px&quot;&gt;eth0&lt;br&gt;1G&lt;/font&gt;" style="sketch=0;outlineConnect=0;fontColor=#000000;fillColor=#fa6800;strokeColor=#C73500;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.elastic_network_adapter;flipH=0;" vertex="1" parent="52">
+                    <mxGeometry x="380" y="130" width="40" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 10px&quot;&gt;downlink2portal&lt;br&gt;VL 312&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 10px&quot;&gt;10.3.12.1/24&lt;/span&gt;&lt;br&gt;&lt;/font&gt;" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/networking/Virtual_Networks_Classic.svg;labelBackgroundColor=none;fontFamily=Tahoma;fillColor=#B3B3B3;" vertex="1" parent="52">
+                    <mxGeometry x="310" y="200" width="33.5" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" value="&lt;font color=&quot;#000000&quot;&gt;&lt;span style=&quot;font-size: 10px&quot;&gt;mng&lt;br&gt;VL 128&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size: 10px&quot;&gt;10.10.128.40/24&lt;/span&gt;&lt;br&gt;&lt;/font&gt;" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/networking/Virtual_Networks_Classic.svg;labelBackgroundColor=none;fontFamily=Tahoma;fillColor=#B3B3B3;" vertex="1" parent="52">
+                    <mxGeometry x="310" y="80" width="33.5" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" value="&lt;font style=&quot;font-size: 10px&quot;&gt;iptables -t nat -A PREROUTING &lt;br&gt;-p tcp --dport 80 -j DNAT &lt;br&gt;--to-destination 10.10.128.10:80&lt;br&gt;iptables -t nat -A PREROUTING&lt;br&gt;-p tcp --dport 443 -j DNAT&lt;br&gt;--to-destination 10.10.128.10:443&lt;br&gt;&lt;/font&gt;" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3D;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.generic_firewall;labelBackgroundColor=none;fontFamily=Tahoma;" vertex="1" parent="52">
+                    <mxGeometry x="190.5" y="133.5" width="39" height="33" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" style="edgeStyle=none;html=1;fontFamily=Tahoma;fontSize=10;fontColor=#006600;startArrow=classic;startFill=1;strokeColor=#6F0000;strokeWidth=2;fillColor=#a20025;" edge="1" parent="1" source="50" target="64">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="330" y="1440"/>
+                            <mxPoint x="540" y="1440"/>
+                            <mxPoint x="630" y="1350"/>
+                            <mxPoint x="720" y="1440"/>
+                            <mxPoint x="990" y="1030"/>
+                            <mxPoint x="720" y="1150"/>
+                            <mxPoint x="650" y="1220"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="66" style="edgeStyle=none;html=1;entryX=0.145;entryY=0.855;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Tahoma;fontSize=10;fontColor=#006600;startArrow=classic;startFill=1;strokeColor=#006600;strokeWidth=2;" edge="1" parent="1" source="50" target="36">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="330" y="1450"/>
+                            <mxPoint x="720" y="1450"/>
+                            <mxPoint x="1000" y="1040"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="67" style="edgeStyle=none;html=1;fontFamily=Tahoma;fontSize=10;fontColor=#006600;startArrow=classic;startFill=1;strokeColor=#001DBC;strokeWidth=2;fillColor=#0050ef;entryX=0.015;entryY=0.985;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="60" target="41">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="640" y="1550"/>
+                            <mxPoint x="730" y="1450"/>
+                            <mxPoint x="1020" y="1040"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="68" style="edgeStyle=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Tahoma;fontSize=10;fontColor=#006600;startArrow=classic;startFill=1;strokeColor=#6F0000;strokeWidth=2;fillColor=#a20025;" edge="1" parent="1" source="64" target="41">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="640" y="1090"/>
+                            <mxPoint x="710" y="1140"/>
+                            <mxPoint x="980" y="1020"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
