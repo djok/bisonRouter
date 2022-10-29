@@ -9,7 +9,7 @@ network:
         search:
         - evo.bg
   vlans:
-    portal:
+    portal@host:
       id: {{if .Master}}{{.if.portal.vlan_master}}{{else if .Backup}}{{.if.portal.vlan_backup}}{{end}}
       link: {{.if.host_mng.port}}
       addresses: [{{if .Master}}{{.if.portal.host_ip_master}}{{else if .Backup}}{{.if.portal.host_ip_backup}}{{end}}{{.if.portal.mask}}]
