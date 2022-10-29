@@ -2,10 +2,10 @@ if:
   uplink: 
     port: 1
     type: untagged
-    ip_master: 185.163.244.4
-    ip_backup: 185.163.244.8
+    ip_master: 185.163.244.3
+    ip_backup: 185.163.244.4
     mask: /28
-    vip: 185.163.244.3
+    vip: 185.163.244.8
     gw_master: 185.163.244.1
     gw_backup: 185.163.244.1
   tng:
