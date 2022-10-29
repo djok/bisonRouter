@@ -13,6 +13,7 @@ if:
     ip_master: 10.10.128.31
     ip_backup: 10.10.128.32
     mask: /24
+    vip: 10.10.128.30
   l2subs:
     port: 0
     range: svid 0 cvid 300 310
