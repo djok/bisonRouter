@@ -25,8 +25,7 @@ cp /etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf.$ts
 
 
 # select master or backup router
-ROLE=""
-if [[ $(hostname) eq "bng-vt-1" ]]; then $ROLE="master"; else $ROLE="backup" fi
+if [[ $(hostname) -eq "bng-vt-1" ]]; then ROLE=master; else ROLE=backup; fi
 
 # generate new config and rollback if anything fails
 if ! ./renderizer ./tmpl/brouter.conf --settings=brouter.yaml --$ROLE=true --missing zero > /etc/bisonrouter/brouter.conf; then
