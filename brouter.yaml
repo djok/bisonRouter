@@ -1,0 +1,63 @@
+if:
+  uplink: 
+    port: 1
+    type: untagged
+    ip_master: 185.163.244.4
+    ip_backup: 185.163.244.8
+    mask: /28
+    vip: 185.163.244.3
+    gw_master: 185.163.244.1
+    gw_backup: 185.163.244.1
+  tng:
+    type: dot1q cvid 128
+    ip_master: 10.10.128.31
+    ip_backup: 10.10.128.32
+    mask: /24
+  l2subs:
+    port: 0
+    range: svid 0 cvid 300 310
+  host_mng: 
+    port: eno1
+    ip_master: 10.10.128.21
+    ip_backup: 10.10.128.22
+    mask: /24
+    gw_master: 10.10.128.1
+    gw_backup: 10.10.128.1
+    vip: 10.10.128.20
+    keepalived_auth_pass: bisonRouter
+  portal:
+    vlan_master: 311
+    vlan_backup: 312
+    host_ip_master: 10.3.11.1
+    host_ip_backup: 10.3.12.1
+    br_ip_master: 10.3.11.2
+    br_ip_backup: 10.3.12.2
+    mask: /24
+subs:
+  cgnat: 
+    network: 100.101.0.0
+    gw: 100.101.0.1
+    mask: /19
+    pool: 100.101.0.2 - 100.101.15.254
+    real_ipv4: 95.169.205.128/25
+  real_ipv4: 
+    network: 95.169.205.0
+    gw: 95.169.205.1
+    mask: /25
+    pool: 95.169.205.2 - 95.169.205.126
+tng:
+  nel_collector: 185.163.244.47
+  ntp_server: 192.36.143.130
+  radius_server: 10.10.128.10
+  radius_server_secret: $radiusSecret$
+  radius_coa_secret: $coaSecret$
+  dhcp_server: 10.10.128.10
+  portal_server: 10.10.128.10
+licenses:
+  servers: [192.119.117.121,116.203.233.121]
+  snumber_master: 2022060600349
+  snumber_backup: 2022081400380
+  password_master: $licensePassword$
+  password_backup: $licensePassword$
+
+

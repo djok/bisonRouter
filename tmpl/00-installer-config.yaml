@@ -1,0 +1,16 @@
+network:
+  ethernets:
+    {{.if.host_mng.port}}:
+      dhcp4: false
+      addresses: [{{if .Master}}{{.if.host_mng.ip_master}}{{else if .Backup}}{{.if.host_mng.ip_backup}}{{end}}{{.if.host_mng.mask}}]
+      gateway4: {{if .Master}}{{.if.host_mng.gw_master}}{{else if .Backup}}{{.if.host_mng.gw_backup}}{{end}}
+      nameservers:
+        addresses: [8.8.8.8, 1.1.1.1, 8.8.4.4]
+        search:
+        - evo.bg
+  vlans:
+    portal:
+      id: {{if .Master}}{{.if.portal.vlan_master}}{{else if .Backup}}{{.if.portal.vlan_backup}}{{end}}
+      link: {{.if.host_mng.port}}
+      addresses: [{{if .Master}}{{.if.portal.host_ip_master}}{{else if .Backup}}{{.if.portal.host_ip_backup}}{{end}}{{.if.portal.mask}}]
+  version: 2
