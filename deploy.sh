@@ -25,22 +25,23 @@ cp /etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf.$ts
 
 
 # select master or backup router
-if [[ $(hostname) eq "bng-vt-1" ]]; then ROLE="master"; else ROLE="backup" fi
+ROLE=""
+if [[ $(hostname) eq "bng-vt-1" ]]; then $ROLE="master"; else $ROLE="backup" fi
 
 # generate new config and rollback if anything fails
-if ! ./renderizer ./tmpl/brouter.conf --settings=brouter.yaml --master=true --missing zero > /etc/bisonrouter/brouter.conf; then
+if ! ./renderizer ./tmpl/brouter.conf --settings=brouter.yaml --$ROLE=true --missing zero > /etc/bisonrouter/brouter.conf; then
     echo error in /tmpl/brouter.conf
     echo Rolling back configuration
     mv /etc/bisonrouter/brouter.conf.$ts /etc/bisonrouter/brouter.conf
     mv /etc/netplan/00-installer-config.yaml.$ts /etc/netplan/00-installer-config.yaml
     mv /etc/keepalived/keepalived.conf.$ts /etc/keepalived/keepalived.conf
-elif ! ./renderizer ./tmpl/00-installer-config.yaml --settings=brouter.yaml --master=true --missing zero > /etc/netplan/00-installer-config.yaml; then 
+elif ! ./renderizer ./tmpl/00-installer-config.yaml --settings=brouter.yaml --$ROLE=true --missing zero > /etc/netplan/00-installer-config.yaml; then 
     echo error in /tmpl/00-installer-config.yaml
     echo Rolling back configuration
     mv /etc/bisonrouter/brouter.conf.$ts /etc/bisonrouter/brouter.conf
     mv /etc/netplan/00-installer-config.yaml.$ts /etc/netplan/00-installer-config.yaml
     mv /etc/keepalived/keepalived.conf.$ts /etc/keepalived/keepalived.conf
-elif ! ./renderizer ./tmpl/keepalived.conf --settings=brouter.yaml --master=true --missing zero > /etc/keepalived/keepalived.conf; then 
+elif ! ./renderizer ./tmpl/keepalived.conf --settings=brouter.yaml --$ROLE=true --missing zero > /etc/keepalived/keepalived.conf; then 
     echo error in /tmpl/keepalived.conf
     echo Rolling back configuration
     mv /etc/bisonrouter/brouter.conf.$ts /etc/bisonrouter/brouter.conf
