@@ -16,6 +16,10 @@ network:
       routes:
         - to: {{.subs.cgnat.network}}{{.subs.cgnat.mask}}
           via: {{if .Master}}{{.if.portal.br_ip_master}}{{else if .Backup}}{{.if.portal.br_ip_backup}}{{end}}
+          metric: 100
+          on-link: true
         - to: {{.subs.real_ipv4.network}}{{.subs.real_ipv4.mask}}
           via: {{if .Master}}{{.if.portal.br_ip_master}}{{else if .Backup}}{{.if.portal.br_ip_backup}}{{end}}
+          metric: 100
+          on-link: true
   version: 2
