@@ -10,7 +10,9 @@ if [[ ! -f "/etc/keepalived/keepalived.conf" ]]; then
     if ! grep "net.ipv4.ip_nonlocal_bind=1" /etc/sysctl.conf; then
         echo "net.ipv4.ip_nonlocal_bind=1" >> /etc/sysctl.conf
     fi
+    touch /etc/keepalived/keepalived.conf
     sysctl -p
+    systemctl enable --now keepalived
 fi
 
 ts=$(date '+%Y%m%dT%H%M%S')
