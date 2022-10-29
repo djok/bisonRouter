@@ -13,4 +13,9 @@ network:
       id: {{if .Master}}{{.if.portal.vlan_master}}{{else if .Backup}}{{.if.portal.vlan_backup}}{{end}}
       link: {{.if.host_mng.port}}
       addresses: [{{if .Master}}{{.if.portal.host_ip_master}}{{else if .Backup}}{{.if.portal.host_ip_backup}}{{end}}{{.if.portal.mask}}]
+      routes:
+        - to: {{.subs.cgnat.network}}{{.subs.cgnat.mask}}
+          via: {{if .Master}}{{.if.portal.br_ip_master}}{{else if .Backup}}{{.if.portal.br_ip_backup}}{{end}}
+        - to: {{.subs.real_ipv4.network}}{{.subs.real_ipv4.mask}}
+          via: {{if .Master}}{{.if.portal.br_ip_master}}{{else if .Backup}}{{.if.portal.br_ip_backup}}{{end}}
   version: 2
