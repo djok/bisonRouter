@@ -26,13 +26,13 @@ if ! ./renderizer ./tmpl/brouter.conf --settings=brouter.yaml --master=true --mi
     cp /etc/bisonrouter/brouter.conf.$ts /etc/bisonrouter/brouter.conf
     cp /etc/netplan/00-installer-config.yaml.$ts /etc/netplan/00-installer-config.yaml
     cp /etc/keepalived/keepalived.conf.$ts /etc/keepalived/keepalived.conf
-elseif ! ./renderizer ./tmpl/00-installer-config.yaml --settings=brouter.yaml --master=true --missing zero > /etc/netplan/00-installer-config.yaml; then 
+else if ! ./renderizer ./tmpl/00-installer-config.yaml --settings=brouter.yaml --master=true --missing zero > /etc/netplan/00-installer-config.yaml; then 
     echo error in /tmpl/00-installer-config.yaml
     echo Rolling back configuration
     cp /etc/bisonrouter/brouter.conf.$ts /etc/bisonrouter/brouter.conf
     cp /etc/netplan/00-installer-config.yaml.$ts /etc/netplan/00-installer-config.yaml
     cp /etc/keepalived/keepalived.conf.$ts /etc/keepalived/keepalived.conf
-elseif ! ./renderizer ./tmpl/keepalived.conf --settings=brouter.yaml --master=true --missing zero > /etc/keepalived/keepalived.conf; then 
+else if ! ./renderizer ./tmpl/keepalived.conf --settings=brouter.yaml --master=true --missing zero > /etc/keepalived/keepalived.conf; then 
     echo error in /tmpl/keepalived.conf
     echo Rolling back configuration
     cp /etc/bisonrouter/brouter.conf.$ts /etc/bisonrouter/brouter.conf
