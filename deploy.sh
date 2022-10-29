@@ -23,6 +23,10 @@ cp /etc/bisonrouter/brouter.conf /etc/bisonrouter/brouter.conf.$ts
 cp /etc/netplan/00-installer-config.yaml /etc/netplan/00-installer-config.yaml.$ts
 cp /etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf.$ts
 
+
+# select master or backup router
+if [[ $(hostname) eq "bng-vt-1" ]]; then ROLE="master"; else ROLE="backup" fi
+
 # generate new config and rollback if anything fails
 if ! ./renderizer ./tmpl/brouter.conf --settings=brouter.yaml --master=true --missing zero > /etc/bisonrouter/brouter.conf; then
     echo error in /tmpl/brouter.conf
