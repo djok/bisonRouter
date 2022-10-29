@@ -2,7 +2,7 @@ if:
   uplink: 
     port: 1
     type: untagged
-    ip_master: 185.163.244.3
+    ip_master: 185.163.244.13
     ip_backup: 185.163.244.4
     mask: /28
     vip: 185.163.244.8
