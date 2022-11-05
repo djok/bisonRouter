@@ -65,7 +65,7 @@ elif ! ./renderizer ./tmpl/dnsmasq.conf --settings=brouter.yaml --$ROLE=true --m
     roll_back $ts
 else
     if ! cmp -s /etc/bisonrouter/brouter.conf.$ts /etc/bisonrouter/brouter.conf; then
-        echo new /etc/bisonrouter/brouter.conf
+        echo new /etc/bisonrouter/brouter.conf compared to /etc/bisonrouter/brouter.conf.$ts
         read -p "Confirm applying brouter.conf config? " -n 1 -r
         echo    # (optional) move to a new line
         if [[ $REPLY =~ ^[Yy]$ ]]
@@ -74,7 +74,7 @@ else
         fi
     fi
     if ! cmp -s /etc/bisonrouter/iptables.sh.$ts /etc/bisonrouter/iptables.sh; then
-        echo new /etc/bisonrouter/iptables.sh
+        echo new /etc/bisonrouter/iptables.sh compared to /etc/bisonrouter/iptables.sh.$ts
         read -p "Confirm applying iptables.sh? " -n 1 -r
         echo    # (optional) move to a new line
         if [[ $REPLY =~ ^[Yy]$ ]]
@@ -83,7 +83,7 @@ else
         fi
     fi
     if ! cmp -s /etc/netplan/00-installer-config.yaml.$ts /etc/netplan/00-installer-config.yaml; then
-        echo new /etc/netplan/00-installer-config.yaml
+        echo new /etc/netplan/00-installer-config.yaml compared to /etc/netplan/00-installer-config.yaml.$ts
         read -p "Confirm applying new netplan config? " -n 1 -r
         echo    # (optional) move to a new line
         if [[ $REPLY =~ ^[Yy]$ ]]
@@ -92,7 +92,7 @@ else
         fi
     fi
     if ! cmp -s /etc/keepalived/keepalived.conf.$ts /etc/keepalived/keepalived.conf; then
-        echo new /etc/keepalived/keepalived.conf
+        echo new /etc/keepalived/keepalived.conf compared to /etc/keepalived/keepalived.conf.$ts
         read -p "Confirm applying new keepalived config? " -n 1 -r
         echo    # (optional) move to a new line
         if [[ $REPLY =~ ^[Yy]$ ]]
@@ -101,7 +101,7 @@ else
         fi
     fi
     if ! cmp -s /etc/dnsmasq.conf.$ts /etc/dnsmasq.conf; then
-        echo new /etc/dnsmasq.conf
+        echo new /etc/dnsmasq.conf compared to /etc/dnsmasq.conf.$ts
         read -p "Confirm applying new dnsmasq config? " -n 1 -r
         echo    # (optional) move to a new line
         if [[ $REPLY =~ ^[Yy]$ ]]
