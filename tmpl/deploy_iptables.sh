@@ -7,8 +7,7 @@ iptables -t nat -A PREROUTING -i portal_host -j DNAT -p tcp --dport 80 --to-dest
 iptables -t nat -A PREROUTING -i portal_host -j DNAT -p tcp --dport 443 --to-destination {{.tng.portal_server}}:443
 iptables -A FORWARD -i portal_host -j ACCEPT -p tcp --dport 80 -d {{.tng.portal_server}}
 iptables -A FORWARD -i portal_host -j ACCEPT -p tcp --dport 443 -d {{.tng.portal_server}}
-#iptables -A FORWARD -i portal_host -j ACCEPT -p tcp --dport 53
-#iptables -A FORWARD -i portal_host -j ACCEPT -p udp --dport 53
+iptables -A FORWARD -i portal_host -j ACCEPT -p udp --dport 53
 iptables -A FORWARD -i portal_host -j ACCEPT -p icmp
 iptables -A FORWARD -i portal_host -j DROP
 iptables -A INPUT -i portal_host -j DROP
