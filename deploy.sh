@@ -34,6 +34,7 @@ cp /etc/bisonrouter/iptables.sh /etc/bisonrouter/iptables.sh.$ts
 cp /etc/netplan/00-installer-config.yaml /etc/netplan/00-installer-config.yaml.$ts
 cp /etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf.$ts
 cp /etc/dnsmasq.conf /etc/dnsmasq.conf.$ts
+cp /etc/snmp/snmpd.conf /etc/snmp/snmpd.conf.$ts
 
 roll_back () {
     echo Rolling back configuration
@@ -42,6 +43,7 @@ roll_back () {
     mv /etc/netplan/00-installer-config.yaml.$1 /etc/netplan/00-installer-config.yaml
     mv /etc/keepalived/keepalived.conf.$1 /etc/keepalived/keepalived.conf
     mv /etc/dnsmasq.conf.$1 /etc/dnsmasq.conf
+    mv /etc/snmp/snmpd.conf.$1 /etc/snmp/snmpd.conf
 }
 
 # select master or backup router
@@ -62,6 +64,9 @@ elif ! ./renderizer ./tmpl/deploy_iptables.sh --settings=brouter.yaml --$ROLE=tr
     roll_back $ts
 elif ! ./renderizer ./tmpl/dnsmasq.conf --settings=brouter.yaml --$ROLE=true --missing zero > /etc/dnsmasq.conf; then
     echo error in /tmpl/dnsmasq.conf
+    roll_back $ts
+elif ! ./renderizer ./tmpl/snmpd.conf --settings=brouter.yaml --$ROLE=true --missing zero > /etc/snmp/snmpd.conf; then
+    echo error in /tmpl/snmpd.conf
     roll_back $ts
 else
     if ! cmp -s /etc/bisonrouter/brouter.conf.$ts /etc/bisonrouter/brouter.conf; then
@@ -107,6 +112,15 @@ else
         if [[ $REPLY =~ ^[Yy]$ ]]
         then
             systemctl restart dnsmasq
+        fi
+    fi
+    if ! cmp -s /etc/snmp/snmpd.conf.$ts /etc/snmp/snmpd.conf; then
+        echo new /etc/snmp/snmpd.conf compared to /etc/snmp/snmpd.conf.$ts
+        read -p "Confirm applying new snmpd config? " -n 1 -r
+        echo    # (optional) move to a new line
+        if [[ $REPLY =~ ^[Yy]$ ]]
+        then
+            systemctl restart snmpd
         fi
     fi
 fi
