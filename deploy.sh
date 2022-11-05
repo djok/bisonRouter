@@ -21,12 +21,19 @@ if [[ ! -f "/etc/bisonrouter/iptables.sh" ]]; then
     touch /etc/bisonrouter/iptables.sh
 fi
 
+
+if [[ ! -f "/etc/bind/named.conf.options" ]]; then
+    apt install bind9 bind9utils -y
+    systemctl enable --now named
+fi
+
 # do backup of current config
 ts=$(date '+%Y%m%dT%H%M%S')
 cp /etc/bisonrouter/brouter.conf /etc/bisonrouter/brouter.conf.$ts
 cp /etc/bisonrouter/iptables.sh /etc/bisonrouter/iptables.sh.$ts
 cp /etc/netplan/00-installer-config.yaml /etc/netplan/00-installer-config.yaml.$ts
 cp /etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf.$ts
+cp /etc/bind/named.conf.options /etc/bind/named.conf.options.$ts
 
 roll_back () {
     echo Rolling back configuration
@@ -34,6 +41,7 @@ roll_back () {
     mv /etc/bisonrouter/iptables.sh.$1 /etc/bisonrouter/iptables.sh
     mv /etc/netplan/00-installer-config.yaml.$1 /etc/netplan/00-installer-config.yaml
     mv /etc/keepalived/keepalived.conf.$1 /etc/keepalived/keepalived.conf
+    mv /etc/bind/named.conf.options.$1 /etc/bind/named.conf.options
 }
 
 # select master or backup router
@@ -52,18 +60,54 @@ elif ! ./renderizer ./tmpl/keepalived.conf --settings=brouter.yaml --$ROLE=true 
 elif ! ./renderizer ./tmpl/deploy_iptables.sh --settings=brouter.yaml --$ROLE=true --missing zero > /etc/bisonrouter/iptables.sh; then
     echo error in /tmpl/deploy_iptables.sh
     roll_back $ts
+elif ! ./renderizer ./tmpl/named.conf.options --settings=brouter.yaml --$ROLE=true --missing zero > /etc/bind/named.conf.options; then
+    echo error in /tmpl/named.conf.options
+    roll_back $ts
 else
     if ! cmp -s /etc/bisonrouter/brouter.conf.$ts /etc/bisonrouter/brouter.conf; then
-        echo new /etc/bisonrouter/brouter.conf 
+        echo new /etc/bisonrouter/brouter.conf
+        read -p "Confirm applying brouter.conf config? " -n 1 -r
+        echo    # (optional) move to a new line
+        if [[ $REPLY =~ ^[Yy]$ ]]
+        then
+            # do dangerous stuff
+        fi
     fi
     if ! cmp -s /etc/bisonrouter/iptables.sh.$ts /etc/bisonrouter/iptables.sh; then
-        echo new /etc/bisonrouter/iptables.sh 
+        echo new /etc/bisonrouter/iptables.sh
+        read -p "Confirm applying iptables.sh? " -n 1 -r
+        echo    # (optional) move to a new line
+        if [[ $REPLY =~ ^[Yy]$ ]]
+        then
+            bash /etc/bisonrouter/iptables.sh
+        fi
     fi
     if ! cmp -s /etc/netplan/00-installer-config.yaml.$ts /etc/netplan/00-installer-config.yaml; then
         echo new /etc/netplan/00-installer-config.yaml
+        read -p "Confirm applying new netplan config? " -n 1 -r
+        echo    # (optional) move to a new line
+        if [[ $REPLY =~ ^[Yy]$ ]]
+        then
+            netplan apply
+        fi
     fi
     if ! cmp -s /etc/keepalived/keepalived.conf.$ts /etc/keepalived/keepalived.conf; then
         echo new /etc/keepalived/keepalived.conf
+        read -p "Confirm applying new keepalived config? " -n 1 -r
+        echo    # (optional) move to a new line
+        if [[ $REPLY =~ ^[Yy]$ ]]
+        then
+            systemctl restart keepalived
+        fi
+    fi
+    if ! cmp -s /etc/bind/named.conf.options.$1 /etc/bind/named.conf.options; then
+        echo new /etc/bind/named.conf.options
+        read -p "Confirm applying new named config? " -n 1 -r
+        echo    # (optional) move to a new line
+        if [[ $REPLY =~ ^[Yy]$ ]]
+        then
+            systemctl restart named
+        fi
     fi
 fi
 
