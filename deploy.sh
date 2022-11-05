@@ -70,7 +70,7 @@ else
         echo    # (optional) move to a new line
         if [[ $REPLY =~ ^[Yy]$ ]]
         then
-            # do dangerous stuff
+            bisonrouter restart
         fi
     fi
     if ! cmp -s /etc/bisonrouter/iptables.sh.$ts /etc/bisonrouter/iptables.sh; then
