@@ -21,7 +21,7 @@ if [[ ! -f "/etc/bisonrouter/iptables.sh" ]]; then
     touch /etc/bisonrouter/iptables.sh
 fi
 
-
+# install dnsmasq if not installed
 if [[ ! -f "/etc/dnsmasq.conf" ]]; then
     apt install dnsmasq -y
     systemctl enable --now dnsmasq
