@@ -21,7 +21,7 @@ if [[ ! -f "/etc/bisonrouter/iptables.sh" ]]; then
     touch /etc/bisonrouter/iptables.sh
 fi
 
-# 
+# install /etc/sudoers.d/bisonrouter is missing
 if [[ ! -f "/etc/sudoers.d/bisonrouter" ]]; then
     echo Debian-snmp ALL = NOPASSWD: /usr/sbin/rcli > /etc/sudoers.d/bisonrouter
     echo Debian-snmp ALL = NOPASSWD: /sbin/ip >> /etc/sudoers.d/bisonrouter
