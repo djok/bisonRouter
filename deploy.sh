@@ -52,5 +52,18 @@ elif ! ./renderizer ./tmpl/keepalived.conf --settings=brouter.yaml --$ROLE=true 
 elif ! ./renderizer ./tmpl/deploy_iptables.sh --settings=brouter.yaml --$ROLE=true --missing zero > /etc/bisonrouter/iptables.sh; then
     echo error in /tmpl/deploy_iptables.sh
     roll_back $ts
+else
+    if ! cmp -s /etc/bisonrouter/brouter.conf.$ts /etc/bisonrouter/brouter.conf; then
+        echo new /etc/bisonrouter/brouter.conf 
+    fi
+    if ! cmp -s /etc/bisonrouter/iptables.sh.$ts /etc/bisonrouter/iptables.sh; then
+        echo new /etc/bisonrouter/iptables.sh 
+    fi
+    if ! cmp -s /etc/netplan/00-installer-config.yaml.$ts /etc/netplan/00-installer-config.yaml; then
+        echo new /etc/netplan/00-installer-config.yaml
+    fi
+    if ! cmp -s /etc/keepalived/keepalived.conf.$ts /etc/keepalived/keepalived.conf; then
+        echo new /etc/keepalived/keepalived.conf
+    fi
 fi
 
