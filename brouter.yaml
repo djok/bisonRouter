@@ -6,8 +6,8 @@ if:
     ip_backup: 185.163.244.4
     mask: /28
     vip: 185.163.244.8
-    gw_master: 185.163.244.1
-    gw_backup: 185.163.244.1
+    gw_master: 185.163.244.5
+    gw_backup: 185.163.244.5
   tng:
     type: dot1q cvid 128
     ip_master: 10.10.128.31

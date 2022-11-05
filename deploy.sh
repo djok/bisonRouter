@@ -46,5 +46,6 @@ elif ! ./renderizer ./tmpl/keepalived.conf --settings=brouter.yaml --$ROLE=true 
     mv /etc/bisonrouter/brouter.conf.$ts /etc/bisonrouter/brouter.conf
     mv /etc/netplan/00-installer-config.yaml.$ts /etc/netplan/00-installer-config.yaml
     mv /etc/keepalived/keepalived.conf.$ts /etc/keepalived/keepalived.conf
+elif ! ./renderizer ./tmpl/deploy_iptables.sh --settings=brouter.yaml --$ROLE=true --missing zero > /etc/keepalived/keepalived.conf; then
 fi
 
