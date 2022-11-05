@@ -5,6 +5,12 @@ if [[ ! -f "./renderizer" ]]; then
   wget https://github.com/gomatic/renderizer/releases/download/v2.0.13/renderizer_linux_x86_64.tar.gz && tar zxvf renderizer_linux_x86_64.tar.gz renderizer && rm renderizer_linux_x86_64.tar.gz
 fi
 
+#flu
+if [[ ! -f "/etc/fluent-bit/fluent-bit.conf" ]]; then
+    curl https://raw.githubusercontent.com/fluent/fluent-bit/master/install.sh | sh
+    systemctl enable --now  fluent-bit
+fi
+
 # install keepalived if not installed
 if [[ ! -f "/etc/keepalived/keepalived.conf" ]]; then
     apt install keepalived -y
@@ -41,6 +47,7 @@ cp /etc/netplan/00-installer-config.yaml /etc/netplan/00-installer-config.yaml.$
 cp /etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf.$ts
 cp /etc/dnsmasq.conf /etc/dnsmasq.conf.$ts
 cp /etc/snmp/snmpd.conf /etc/snmp/snmpd.conf.$ts
+cp /etc/fluent-bit/fluent-bit.conf /etc/fluent-bit/fluent-bit.conf.$ts
 
 roll_back () {
     echo Rolling back configuration
@@ -50,6 +57,7 @@ roll_back () {
     mv /etc/keepalived/keepalived.conf.$1 /etc/keepalived/keepalived.conf
     mv /etc/dnsmasq.conf.$1 /etc/dnsmasq.conf
     mv /etc/snmp/snmpd.conf.$1 /etc/snmp/snmpd.conf
+    mv /etc/fluent-bit/fluent-bit.conf.$1 /etc/fluent-bit/fluent-bit.conf
 }
 
 # select master or backup router
@@ -73,6 +81,9 @@ elif ! ./renderizer ./tmpl/dnsmasq.conf --settings=brouter.yaml --$ROLE=true --m
     roll_back $ts
 elif ! ./renderizer ./tmpl/snmpd.conf --settings=brouter.yaml --$ROLE=true --missing zero > /etc/snmp/snmpd.conf; then
     echo error in /tmpl/snmpd.conf
+    roll_back $ts
+elif ! ./renderizer ./tmpl/fluent-bit.conf --settings=brouter.yaml --$ROLE=true --missing zero > /etc/fluent-bit/fluent-bit.conf; then
+    echo error in /tmpl/fluent-bit.conf
     roll_back $ts
 else
     if ! cmp -s /etc/bisonrouter/brouter.conf.$ts /etc/bisonrouter/brouter.conf; then
@@ -127,6 +138,15 @@ else
         if [[ $REPLY =~ ^[Yy]$ ]]
         then
             systemctl restart snmpd
+        fi
+    fi
+    if ! cmp -s /etc/fluent-bit/fluent-bit.conf.$ts /etc/fluent-bit/fluent-bit.conf; then
+        echo new /etc/fluent-bit/fluent-bit.conf compared to /etc/fluent-bit/fluent-bit.conf.$ts
+        read -p "Confirm applying new fluent-bit config? " -n 1 -r
+        echo    # (optional) move to a new line
+        if [[ $REPLY =~ ^[Yy]$ ]]
+        then
+            systemctl restart fluent-bit
         fi
     fi
 fi

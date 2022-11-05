@@ -48,6 +48,9 @@ subs:
     pool: 95.169.205.2 - 95.169.205.126
 tng:
   nel_collector: 185.163.244.47
+  log_collector: 10.10.128.22
+  log_collector_user: vbng
+  log_collector_password: vbng.log.admin
   ntp_server: 192.36.143.130
   radius_server: 10.10.128.10
   radius_server_secret: $radiusSecret$
