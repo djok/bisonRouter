@@ -50,7 +50,7 @@ tng:
   nel_collector: 185.163.244.47
   log_collector: 10.10.128.22
   log_collector_user: vbng
-  log_collector_password: vbng.log.admin
+  log_collector_password: vbng.l0g.admin
   ntp_server: 192.36.143.130
   radius_server: 10.10.128.10
   radius_server_secret: $radiusSecret$
