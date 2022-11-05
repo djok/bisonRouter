@@ -54,8 +54,8 @@ tng:
   radius_coa_secret: $coaSecret$
   dhcp_server: 10.10.128.10
   portal_server: 10.10.128.10
-  snmpd_community_ro: 92h89hdp9
-  snmpd_community_rw: 92h89hdp9
+  snmpd_community_ro: evo-ro
+  snmpd_community_rw: evo-ro
 licenses:
   servers: [192.119.117.121,116.203.233.121]
   snumber_master: 2022060600349
