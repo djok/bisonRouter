@@ -22,9 +22,9 @@ if [[ ! -f "/etc/bisonrouter/iptables.sh" ]]; then
 fi
 
 
-if [[ ! -f "/etc/bind/named.conf.options" ]]; then
-    apt install bind9 bind9utils -y
-    systemctl enable --now named
+if [[ ! -f "/etc/dnsmasq.conf" ]]; then
+    apt install dnsmasq -y
+    systemctl enable --now dnsmasq
 fi
 
 # do backup of current config
@@ -33,7 +33,7 @@ cp /etc/bisonrouter/brouter.conf /etc/bisonrouter/brouter.conf.$ts
 cp /etc/bisonrouter/iptables.sh /etc/bisonrouter/iptables.sh.$ts
 cp /etc/netplan/00-installer-config.yaml /etc/netplan/00-installer-config.yaml.$ts
 cp /etc/keepalived/keepalived.conf /etc/keepalived/keepalived.conf.$ts
-cp /etc/bind/named.conf.options /etc/bind/named.conf.options.$ts
+cp /etc/dnsmasq.conf /etc/dnsmasq.conf.$ts
 
 roll_back () {
     echo Rolling back configuration
@@ -41,7 +41,7 @@ roll_back () {
     mv /etc/bisonrouter/iptables.sh.$1 /etc/bisonrouter/iptables.sh
     mv /etc/netplan/00-installer-config.yaml.$1 /etc/netplan/00-installer-config.yaml
     mv /etc/keepalived/keepalived.conf.$1 /etc/keepalived/keepalived.conf
-    mv /etc/bind/named.conf.options.$1 /etc/bind/named.conf.options
+    mv /etc/dnsmasq.conf.$1 /etc/dnsmasq.conf
 }
 
 # select master or backup router
@@ -60,8 +60,8 @@ elif ! ./renderizer ./tmpl/keepalived.conf --settings=brouter.yaml --$ROLE=true 
 elif ! ./renderizer ./tmpl/deploy_iptables.sh --settings=brouter.yaml --$ROLE=true --missing zero > /etc/bisonrouter/iptables.sh; then
     echo error in /tmpl/deploy_iptables.sh
     roll_back $ts
-elif ! ./renderizer ./tmpl/named.conf.options --settings=brouter.yaml --$ROLE=true --missing zero > /etc/bind/named.conf.options; then
-    echo error in /tmpl/named.conf.options
+elif ! ./renderizer ./tmpl/dnsmasq.conf --settings=brouter.yaml --$ROLE=true --missing zero > /etc/dnsmasq.conf; then
+    echo error in /tmpl/dnsmasq.conf
     roll_back $ts
 else
     if ! cmp -s /etc/bisonrouter/brouter.conf.$ts /etc/bisonrouter/brouter.conf; then
@@ -100,13 +100,13 @@ else
             systemctl restart keepalived
         fi
     fi
-    if ! cmp -s /etc/bind/named.conf.options.$1 /etc/bind/named.conf.options; then
-        echo new /etc/bind/named.conf.options
-        read -p "Confirm applying new named config? " -n 1 -r
+    if ! cmp -s /etc/dnsmasq.conf.$ts /etc/dnsmasq.conf; then
+        echo new /etc/dnsmasq.conf
+        read -p "Confirm applying new dnsmasq config? " -n 1 -r
         echo    # (optional) move to a new line
         if [[ $REPLY =~ ^[Yy]$ ]]
         then
-            systemctl restart named
+            systemctl restart dnsmasq
         fi
     fi
 fi
